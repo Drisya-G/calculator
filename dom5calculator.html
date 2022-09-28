@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+  <h1 class="text-center"> Calculator </h1>
+  <div class="row">
+    <div class="col-5"></div>
+    <div class=" container col-2 border border-info  bg-dark">
+      <form name="form" class="m-1">
+
+        <input id="result" class="mt-4 pt-4 " type="text" name="answer" value=" "> <br> <br>
+
+        <input type="button" id="one" class="p-3" value="1" onclick="displayNumber(1)">
+        <input type="button" id="two" class="p-3" value="2" onclick="displayNumber(2)">
+        <input type="button" id="three" class="p-3" value="3" onclick="displayNumber(3)">
+        <input type="button" id="add" class="p-3 " value="+" onclick="displayNumber('+')">
+        <br> <br>
+
+        <input type="button" id="four" class="p-3" value="4" onclick="displayNumber(4)">
+        <input type="button" id="five" class="p-3" value="5" onclick="displayNumber(5)">
+        <input type="button" id="six" class="p-3" value="6" onclick="displayNumber(6)">
+        <input type="button" id="sub" class="p-3" value="-" onclick="displayNumber('-')">
+        <br> <br>
+
+        <input type="button" id="seven" class="p-3 " value="7" onclick="displayNumber(7)">
+        <input type="button" id="eight" class="p-3" value="8" onclick="displayNumber(8)">
+        <input type="button" id="nine" class="p-3" value="9" onclick="displayNumber(9)">
+        <input type="button" id="mul" class="p-3" value="*" onclick="displayNumber('*')">
+        <br> <br>
+
+
+        <input type="button" id="div" class=" p-3" value="/" onclick="displayNumber('/')">
+        <input type="button" id="zero" class=" p-3" value="0" onclick="displayNumber(0)">
+        <input type="button" id="del" class="pt-3 pb-3 pe-3" value="&#9003" onclick="remove()">
+        <input type="button" id="equal" class=" p-3" value="=" onclick="solve()">
+        <br> <br>
+        <input type="button" class="ms-5 p-2 mb-3" value="Clear All" onclick="clr()">
+        <br>
+
+      </form>
+    </div>
+    <div class="col-5"></div>
+
+  </div>
+
+</body>
+
+
+
+
+<script>
+
+  function displayNumber(num) {
+    result.value += num;
+    //&#9003
+  }
+
+
+
+
+  function clr() {
+    //document.getElementById("result").value = "";
+    result.value = '';
+  }
+
+
+
+  function solve() {
+    // let m = document.getElementById('result');
+    // let x = document.getElementById('result').value;
+    // let y = eval(x);
+    // clr();
+    // m.value += y;
+
+    //.or.
+    // expression = result.value;
+    // output = eval(expression);
+    // result.value = output;
+
+    //.....or.....
+    result.value=eval(result.value);
+
+  }
+
+
+
+
+
+  function remove(){
+    currentExpression=result.value;
+    result.value=currentExpression.slice(0,-1);
+
+  }
+
+
+
+
+
+</script>
+
+</html>
